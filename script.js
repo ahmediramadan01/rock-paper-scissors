@@ -94,9 +94,9 @@ game(rounds);
 // Log final result
 console.log("-----------------FINAL RESULTS-----------------");
 if (playerScore > computerScore) {
-    console.log("YOU WON THE GAME :D");
+    alert("YOU WON THE GAME :D");
 } else if (playerScore < computerScore) {
-    console.log("YOU LOST :(");
+    alert("YOU LOST :(");
 } else {
-    console.log("TIE!!!!!");
+    alert("TIE!!!!!");
 }
