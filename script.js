@@ -3,6 +3,9 @@
 const playerScoreElement = document.querySelector(".score--player");
 const computerScoreElement = document.querySelector(".score--computer");
 
+const playerSelectionElement = document.querySelector(".selection--player");
+const computerSelectionElement = document.querySelector(".selection--computer");
+
 const choicesBtnsElement = document.querySelector(".btns");
 
 // Rock, Paper, Scissors choices
@@ -54,8 +57,12 @@ choicesBtnsElement.addEventListener("click", function (event) {
         event.preventDefault();
         if (event.target.classList.contains("btn")) {
             playerChoice = event.target.dataset.choice;
+            playerSelectionElement.src = `./images/player-${playerChoice}.png`;
+
+            computerChoice = getComputerChoice();
+            computerSelectionElement.src = `./images/computer-${computerChoice}.png`;
         }
-        computerChoice = getComputerChoice();
+
         playRound(playerChoice, computerChoice);
     }
 });
