@@ -5,7 +5,7 @@ const rpsChoice = ["rock", "paper", "scissors"];
 
 // Prompt player to choose
 const getPlayerChoice = function () {
-    return prompt("Choose between: Rock, Paper, or Scissors").trim().toLowerCase();
+    // return prompt("Choose between: Rock, Paper, or Scissors").trim().toLowerCase();
 };
 
 // Get random computer choice
@@ -87,16 +87,16 @@ const game = function (n) {
 };
 
 // Prompt player for number of rounds
-const rounds = Number(prompt("Enter number of rounds: "));
+// const rounds = Number(prompt("Enter number of rounds: "));
 // Play game
 game(rounds);
 
 // Log final result
-console.log("-----------------FINAL RESULTS-----------------");
-if (playerScore > computerScore) {
-    alert("YOU WON THE GAME :D");
-} else if (playerScore < computerScore) {
-    alert("YOU LOST :(");
-} else {
-    alert("TIE!!!!!");
-}
+// console.log("-----------------FINAL RESULTS-----------------");
+// if (playerScore > computerScore) {
+//     alert("YOU WON THE GAME :D");
+// } else if (playerScore < computerScore) {
+//     alert("YOU LOST :(");
+// } else {
+//     alert("TIE!!!!!");
+// }

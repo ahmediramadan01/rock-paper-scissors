@@ -3,8 +3,37 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script defer src="./script.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet" />
+        <link rel="icon" href="./images/player-scissors.png" />
+        <link rel="stylesheet" href="./style.css" />
+        <script src="./script.js" defer></script>
         <title>Rock Paper Scissors</title>
     </head>
-    <body></body>
+    <body>
+        <div class="container">
+            <ul class="scoreboard">
+                <li>
+                    <h2>PLAYER</h2>
+                    <p class="score score--player">0</p>
+                </li>
+                <li>
+                    <h2>COMPUTER</h2>
+                    <p class="score score--computer">0</p>
+                </li>
+            </ul>
+            <ul class="selection">
+                <li><img src="./images/player.png" alt="Player Selection" class="selection selection--player" /></li>
+                <li>
+                    <img src="./images/computer.png" alt="Computer Selection" class="selection selection--computer" />
+                </li>
+            </ul>
+            <ul class="btns">
+                <li><button class="btn btn--rock">ROCK</button></li>
+                <li><button class="btn btn--paper">PAPER</button></li>
+                <li><button class="btn btn--scissors">SCISSORS</button></li>
+            </ul>
+        </div>
+    </body>
 </html>
