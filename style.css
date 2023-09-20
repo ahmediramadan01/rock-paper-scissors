@@ -12,6 +12,10 @@ html {
 body {
     font-family: "Inter", sans-serif;
     font-weight: 700;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 ul {
@@ -31,5 +35,52 @@ button {
 }
 
 .container {
-    max-width: 144rem;
+    width: 100vw;
+}
+
+/* Scoreboard Styles */
+.scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    text-align: center;
+}
+h2 {
+    font-size: 7rem;
+}
+
+.score {
+    font-size: 4rem;
+}
+
+/* Selection Styles */
+.selections {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selection {
+    max-width: 100%;
+}
+
+/* Buttons Styles */
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn {
+    font-size: 7rem;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-1rem);
+}
+
+.btn:active {
+    transform: translateY(-0.2rem);
 }
