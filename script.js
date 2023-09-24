@@ -1,6 +1,6 @@
 "use strict";
 
-// DOM ELEMENTS
+// DOM ELEMENTS //
 
 const playerElement = document.querySelector(".player");
 
@@ -16,20 +16,18 @@ const choicesButtonsElement = document.querySelector(".buttons");
 
 const resetButtonElement = document.querySelector(".button--reset");
 
-// GLOBAL VARIABLES
+// GLOBAL VARIABLES //
 
-// Rock, Paper, Scissors choices
-const rpsChoice = ["rock", "paper", "scissors"];
+const RPS_CHOICES = ["rock", "paper", "scissors"];
 
-let playing = true;
-let playerScore = 0;
-let computerScore = 0;
+let PLAYING = true;
+let PLAYER_SCORE = 0;
+let COMPUTER_SCORE = 0;
 
-let playerChoice, computerChoice;
+let PLAYER_CHOICE, COMPUTER_CHOICE;
 
-// HELPER FUNCTIONS
+// HELPER FUNCTIONS //
 
-// Get random computer choice
 const getComputerChoice = function () {
     const randomNumber = Math.floor(Math.random() * 3);
     switch (randomNumber) {
@@ -42,49 +40,46 @@ const getComputerChoice = function () {
     }
 };
 
-// Get one round result
 const getRoundScore = function (playerSelection, computerSelection) {
-    // Calculate difference of index from choices array
-    const indexDifference = rpsChoice.indexOf(playerSelection) - rpsChoice.indexOf(computerSelection);
+    const indexDifference = RPS_CHOICES.indexOf(playerSelection) - RPS_CHOICES.indexOf(computerSelection);
 
-    // Determine round result
     if (indexDifference !== 0) {
         if (indexDifference === 1 || indexDifference === -2) {
-            playerScore++;
-            playerScoreElement.textContent = playerScore;
+            PLAYER_SCORE++;
+            playerScoreElement.textContent = PLAYER_SCORE;
         } else {
-            computerScore++;
-            computerScoreElement.textContent = computerScore;
+            COMPUTER_SCORE++;
+            computerScoreElement.textContent = COMPUTER_SCORE;
         }
     }
 
-    if (playerScore === 5 || computerScore === 5) {
-        playing = false;
+    if (PLAYER_SCORE === 5 || COMPUTER_SCORE === 5) {
+        PLAYING = false;
 
-        if (playerScore === 5) {
+        if (PLAYER_SCORE === 5) {
             playerElement.style.color = "green";
             computerElement.style.color = "red";
-        } else if (computerScore === 5) {
+        } else if (COMPUTER_SCORE === 5) {
             playerElement.style.color = "red";
             computerElement.style.color = "green";
         }
     }
 };
 
-// CALLBACK FUNCTIONS
+// CALLBACK FUNCTIONS //
 
 const playRound = function (event) {
     event.preventDefault();
-    if (playing) {
+    if (PLAYING) {
         if (event.target.classList.contains("button")) {
-            playerChoice = event.target.dataset.choice;
-            playerSelectionElement.src = `./images/player-${playerChoice}.png`;
+            PLAYER_CHOICE = event.target.dataset.choice;
+            playerSelectionElement.src = `./images/player-${PLAYER_CHOICE}.png`;
 
-            computerChoice = getComputerChoice();
-            computerSelectionElement.src = `./images/computer-${computerChoice}.png`;
+            COMPUTER_CHOICE = getComputerChoice();
+            computerSelectionElement.src = `./images/computer-${COMPUTER_CHOICE}.png`;
         }
 
-        getRoundScore(playerChoice, computerChoice);
+        getRoundScore(PLAYER_CHOICE, COMPUTER_CHOICE);
     }
 };
 
@@ -92,19 +87,18 @@ const resetGame = function () {
     playerElement.style.color = "black";
     computerElement.style.color = "black";
 
-    playing = true;
+    PLAYING = true;
 
-    playerScore = 0;
-    playerScoreElement.textContent = playerScore;
+    PLAYER_SCORE = 0;
+    playerScoreElement.textContent = PLAYER_SCORE;
     playerSelectionElement.src = `./images/player.png`;
 
-    computerScore = 0;
-    computerScoreElement.textContent = computerScore;
+    COMPUTER_SCORE = 0;
+    computerScoreElement.textContent = COMPUTER_SCORE;
     computerSelectionElement.src = `./images/computer.png`;
 };
 
-// Listen for player choice
+// EVENT LISTENERS //
 
 choicesButtonsElement.addEventListener("click", playRound);
-
 resetButtonElement.addEventListener("click", resetGame);
