@@ -1,5 +1,7 @@
 "use strict";
 
+// DOM ELEMENTS
+
 const playerElement = document.querySelector(".player");
 
 const computerElement = document.querySelector(".computer");
@@ -10,12 +12,22 @@ const computerScoreElement = document.querySelector(".score--computer");
 const playerSelectionElement = document.querySelector(".selection--player");
 const computerSelectionElement = document.querySelector(".selection--computer");
 
-const choicesBtnsElement = document.querySelector(".btns");
+const choicesButtonsElement = document.querySelector(".buttons");
 
-const resetBtnElement = document.querySelector(".btn--reset");
+const resetButtonElement = document.querySelector(".button--reset");
+
+// GLOBAL VARIABLES
 
 // Rock, Paper, Scissors choices
 const rpsChoice = ["rock", "paper", "scissors"];
+
+let playing = true;
+let playerScore = 0;
+let computerScore = 0;
+
+let playerChoice, computerChoice;
+
+// HELPER FUNCTIONS
 
 // Get random computer choice
 const getComputerChoice = function () {
@@ -30,12 +42,8 @@ const getComputerChoice = function () {
     }
 };
 
-let playing = true;
-let playerScore = 0;
-let computerScore = 0;
-
 // Get one round result
-const playRound = function (playerSelection, computerSelection) {
+const getRoundScore = function (playerSelection, computerSelection) {
     // Calculate difference of index from choices array
     const indexDifference = rpsChoice.indexOf(playerSelection) - rpsChoice.indexOf(computerSelection);
 
@@ -63,13 +71,12 @@ const playRound = function (playerSelection, computerSelection) {
     }
 };
 
-// Listen for player choice
-let playerChoice;
-let computerChoice;
-choicesBtnsElement.addEventListener("click", function (event) {
+// CALLBACK FUNCTIONS
+
+const playRound = function (event) {
     event.preventDefault();
     if (playing) {
-        if (event.target.classList.contains("btn")) {
+        if (event.target.classList.contains("button")) {
             playerChoice = event.target.dataset.choice;
             playerSelectionElement.src = `./images/player-${playerChoice}.png`;
 
@@ -77,9 +84,9 @@ choicesBtnsElement.addEventListener("click", function (event) {
             computerSelectionElement.src = `./images/computer-${computerChoice}.png`;
         }
 
-        playRound(playerChoice, computerChoice);
+        getRoundScore(playerChoice, computerChoice);
     }
-});
+};
 
 const resetGame = function () {
     playerElement.style.color = "black";
@@ -95,4 +102,9 @@ const resetGame = function () {
     computerScoreElement.textContent = computerScore;
     computerSelectionElement.src = `./images/computer.png`;
 };
-resetBtnElement.addEventListener("click", resetGame);
+
+// Listen for player choice
+
+choicesButtonsElement.addEventListener("click", playRound);
+
+resetButtonElement.addEventListener("click", resetGame);
