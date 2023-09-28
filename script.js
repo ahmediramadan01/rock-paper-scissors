@@ -1,5 +1,15 @@
 "use strict";
 
+// GLOBAL VARIABLES //
+
+const RPS_CHOICES = ["rock", "paper", "scissors"];
+
+let PLAYING = true;
+let PLAYER_SCORE = 0;
+let COMPUTER_SCORE = 0;
+
+let PLAYER_CHOICE, COMPUTER_CHOICE;
+
 // DOM ELEMENTS //
 
 const playerElement = document.querySelector(".player");
@@ -15,16 +25,6 @@ const computerSelectionElement = document.querySelector(".selection--computer");
 const choicesButtonsElement = document.querySelector(".buttons");
 
 const resetButtonElement = document.querySelector(".button--reset");
-
-// GLOBAL VARIABLES //
-
-const RPS_CHOICES = ["rock", "paper", "scissors"];
-
-let PLAYING = true;
-let PLAYER_SCORE = 0;
-let COMPUTER_SCORE = 0;
-
-let PLAYER_CHOICE, COMPUTER_CHOICE;
 
 // HELPER FUNCTIONS //
 
