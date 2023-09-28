@@ -4,9 +4,9 @@
 
 const RPS_CHOICES = ["rock", "paper", "scissors"];
 
-let PLAYING = true;
-let PLAYER_SCORE = 0;
-let COMPUTER_SCORE = 0;
+let PLAYING = true,
+    PLAYER_SCORE = 0,
+    COMPUTER_SCORE = 0;
 
 let PLAYER_CHOICE, COMPUTER_CHOICE;
 
