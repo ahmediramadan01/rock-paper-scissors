@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet" />
-        <link rel="icon" href="./images/player-scissors.png" />
-        <link rel="stylesheet" href="./style.css" />
-        <script src="./script.js" defer></script>
-        <title>Rock Paper Scissors</title>
-    </head>
-    <body>
-        <div class="container">
-            <ul class="scoreboard">
-                <li class="player">
-                    <h2>PLAYER</h2>
-                    <p class="score score--player">0</p>
-                </li>
-                <li class="computer">
-                    <h2>COMPUTER</h2>
-                    <p class="score score--computer">0</p>
-                </li>
-            </ul>
-            <ul class="selections">
-                <li>
-                    <img src="./images/player.png" alt="Player's selection image" class="selection selection--player" />
-                </li>
-                <li>
-                    <img
-                        src="./images/computer.png"
-                        alt="Computer's selection image"
-                        class="selection selection--computer" />
-                </li>
-            </ul>
-            <ul class="buttons">
-                <li><button class="button button--rock" data-choice="rock">ROCK</button></li>
-                <li><button class="button button--paper" data-choice="paper">PAPER</button></li>
-                <li><button class="button button--scissors" data-choice="scissors">SCISSORS</button></li>
-            </ul>
-            <button class="button button--reset">RESET</button>
-        </div>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="./images/player-scissors.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="scoreboard">
+        <li class="player">
+          <h2>PLAYER</h2>
+          <p class="score score--player">0</p>
+        </li>
+        <li class="computer">
+          <h2>COMPUTER</h2>
+          <p class="score score--computer">0</p>
+        </li>
+      </ul>
+      <ul class="selections">
+        <li>
+          <img src="./images/player.png" alt="Player's selection image" class="selection selection--player" />
+        </li>
+        <li>
+          <img src="./images/computer.png" alt="Computer's selection image" class="selection selection--computer" />
+        </li>
+      </ul>
+      <ul class="buttons">
+        <li><button class="button button--rock" data-choice="rock">ROCK</button></li>
+        <li><button class="button button--paper" data-choice="paper">PAPER</button></li>
+        <li><button class="button button--scissors" data-choice="scissors">SCISSORS</button></li>
+      </ul>
+      <button class="button button--reset">RESET</button>
+    </div>
+  </body>
 </html>
